@@ -40,8 +40,9 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(yeniArray){
+  yeniArray = [...orijinalTatlar]
+  return yeniArray
 }
 
 
@@ -56,8 +57,13 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(x){
+  if (x.length ===25) {
+    return true
+  } else {
+    return false
+  }
+  
 }
 
 
@@ -74,8 +80,10 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(x, y){
+  x.unshift(y)
+  return x
+
 }
 
 
@@ -92,8 +100,11 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(x){
+  x.pop()
+    return x
+  
+  
 }
 
 
@@ -108,8 +119,8 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(x, y){
+  return x[y]
 }
 
 
@@ -128,8 +139,13 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(x, y){
+  for (let i = 0 ; i<x.length ; i++) {
+    if (x[i] === y) {
+      x.splice(i, 1)
+    }
+  }
+  return x
 }
 
 
@@ -154,8 +170,14 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(x, y){
+let z = [];
+for (let i = 0 ; i < x.length ; i++) {
+  if (x[i].includes(y)) {
+    z.push(x[i])
+  }
+}
+return z
 }
 
 
@@ -171,9 +193,17 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
 
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
-
-function ortalamaKelimeSayisi(/*kod buraya*/){
-  /*kod buraya*/
+let array = orijinalTatlar;
+function countWords(str){
+  const arr = str.split(' ')
+  return arr.length;
+}
+function ortalamaKelimeSayisi(array){
+  let totalWordCount =0;
+  for(let i = 0; i<array.length;i++){
+    totalWordCount += countWords(array[i])
+  }
+  return totalWordCount/countWords
 }
 
 
@@ -190,8 +220,13 @@ Aşağıdakileri yapmak için rastgeleTatlar işlevini ve yeni dizileri kullanı
 */
 
 
-function rastgeleTatlar(/*kod buraya*/){
-  /*kod buraya*/
+function rastgeleTatlar(a, b, c, d){
+  let e =[]
+  e = a.concat(b, c, d)
+  for(let i = e.length-1; i>=25; i--){
+    e.splice(Math.floor(math.random()*e.length, 1))
+  }
+  return e
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
